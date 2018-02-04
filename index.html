@@ -44,10 +44,10 @@
         </table>-->
 
         <div class="cell" v-for="coin in coins">
-            <table style="position:relative;">
+            <table style="position:relative; float:left;">
                 <td><h1>{{ coin.name }}</h1></td>
             </table>
-            <table class="right">
+            <table style="position:relative; float:right;">
                 <td>{{ coin.price_usd | currency }}</td>
                 <td v-bind:style="getColor(coin.percent_change_1h)">
                     1D: <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
