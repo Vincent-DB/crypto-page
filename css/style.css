@@ -4,11 +4,24 @@ body {
     background: #F8F8FA;
 }
 .app {
-    width: 100%;
+    width: 800px;
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
     color: #3A4047;
+    margin: 0 auto;
 }
-td img {
+.cell {
+    background: white;
+    height: 60px;
+    width: 800px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 25px;
+    padding: 20px;
+}
+.cell img {
     width: 25px;
+}
+h1 {
+    font-size: 1.5em;
 }

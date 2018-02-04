@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="app">
-        <table class="table table-hover">
+        <!--<table class="table table-hover">
             <thead>
                 <tr>
                     <td>Rank</td>
@@ -25,7 +25,7 @@
             </thead>
             <tbody>
                 <tr v-for="coin in coins">
-                    <td>{{ coin.rank }}</td>
+                    <td></td>
                     <td><img v-bind:src="getCoinImage(coin.symbol)"> {{ coin.name }}</td>
                     <td>{{ coin.symbol }}</td>
                     <td>{{ coin.price_usd | currency }}</td>
@@ -41,7 +41,27 @@
                     <td>{{ coin.market_cap_usd | currency }}</td>
                 </tr>
             </tbody>
-        </table>
+        </table>-->
+
+        <div class="cell" v-for="coin in coins">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h1>{{ coin.name }}</h1></td> 
+                        <td>{{ coin.price_usd | currency }}</td>
+                        <td v-bind:style="getColor(coin.percent_change_1h)">
+                            1D: <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
+                        </td>
+                        <td v-bind:style="getColor(coin.percent_change_24h)">
+                            1W: <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
+                        </td>
+                        <td v-bind:style="getColor(coin.percent_change_7d)">
+                            1M: <span v-if="coin.percent_change_7d > 0">+</span>{{ coin.percent_change_7d }}%
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
