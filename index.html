@@ -44,22 +44,20 @@
         </table>-->
 
         <div class="cell" v-for="coin in coins">
-            <table>
-                <tbody>
-                    <tr>
-                        <td><h1>{{ coin.name }}</h1></td> 
-                        <td>{{ coin.price_usd | currency }}</td>
-                        <td v-bind:style="getColor(coin.percent_change_1h)">
-                            1D: <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
-                        </td>
-                        <td v-bind:style="getColor(coin.percent_change_24h)">
-                            1W: <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
-                        </td>
-                        <td v-bind:style="getColor(coin.percent_change_7d)">
-                            1M: <span v-if="coin.percent_change_7d > 0">+</span>{{ coin.percent_change_7d }}%
-                        </td>
-                    </tr>
-                </tbody>
+            <table style="position:relative;">
+                <td><h1>{{ coin.name }}</h1></td>
+            </table>
+            <table class="right">
+                <td>{{ coin.price_usd | currency }}</td>
+                <td v-bind:style="getColor(coin.percent_change_1h)">
+                    1D: <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
+                </td>
+                <td v-bind:style="getColor(coin.percent_change_24h)">
+                    1W: <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
+                </td>
+                <td v-bind:style="getColor(coin.percent_change_7d)">
+                    1M: <span v-if="coin.percent_change_7d > 0">+</span>{{ coin.percent_change_7d }}%
+                </td>
             </table>
         </div>
     </div>

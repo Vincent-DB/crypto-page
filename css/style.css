@@ -25,3 +25,7 @@ body {
 h1 {
     font-size: 1.5em;
 }
+.right {
+    float: right;
+    position:relative;
+}
