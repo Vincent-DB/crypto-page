@@ -1,0 +1,14 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #F8F8FA;
+}
+.app {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #3A4047;
+}
+td img {
+    width: 25px;
+}
